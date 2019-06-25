@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar novo Local de Evento</title>
+</head>
+<body>
+
+<H2>Cadastrar novo Local de Evento</h2>
+
+<form th:action="@{/addLocalEvento}" th:object="${localEvento}" method="post">
+		Nome do local: <input type="text" th:field="*{nomeLocal}"/><br>
+		Endereço: <input type="text" th:field="*{endereco}"/><br>
+		Link google maps: <input type="text" th:field="*{maps}"/><br>
+		Capacidade: <input type="text" th:field="*{capacidade}"/><br>
+		Local aberto: <select th:field="*{localAberto}">
+				<option th:value="SIM">SIM</option>
+				<option th:value="NAO">NÃO</option>
+					</select>
+		
+		<input type="submit" value="enviar">
+	</form>
+	
+	<br>
+<a href="/ind">voltar ao menu principal</a><br>
+
+</body>
+</html>
